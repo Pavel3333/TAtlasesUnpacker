@@ -121,7 +121,7 @@ for fil in atlases:
 
     header = atlas['header']
     
-    print '\t\tresolution : %sx%s'    %(header['WIDTH'] // 8, header['HEIGHT'] // 8)
+    print '\t\tresolution : %sx%s'    %(header['WIDTH'] // 8, header['HEIGHT'] // 8) #converting from bits to bytes
     print '\t\tsize       : %s Bytes' %(header['SIZE'])
         
     print '\tcoords:'
@@ -131,11 +131,11 @@ for fil in atlases:
     for coord in atlas['coords']:
         print '\t\tcoord_%s:'%(coord_i)
 
-        print '\t\t\tx    : %-4s->%-4s'%(coord['x0'] // 8, coord['x1'] // 8)
-        print '\t\t\ty    : %-4s->%-4s'%(coord['y0'] // 8, coord['y1'] // 8)
+        print '\t\t\tx    : %-4s->%-4s'%(coord['x0'] // 8, coord['x1'] // 8) #converting from bits to bytes
+        print '\t\t\ty    : %-4s->%-4s'%(coord['y0'] // 8, coord['y1'] // 8) #converting from bits to bytes
         print ''
         print '\t\t\tpath : %s'%(coord['path'])
         
         coord_i += 1
 
-input()
+input() #wait for user action
